@@ -36,6 +36,30 @@
         padding: 10px;
     }
 
+    .sidebar__link--active {
+        background-color: lightgray;
+    }
+
+    .sidebar__link__label {
+        cursor: pointer;
+    }
+
+    .sidebar__link__submenu {
+        padding: 10px;
+        padding-bottom: 0px;
+    }
+    
+    .sidebar__link:not(.sidebar__link--active) .sidebar__link__submenu {
+        display: none;
+    }
+
+    .sidebar__link__submenu__link {
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+        color: #000;
+    }
+
     .main {
         flex: 1 1 auto;
         padding: 0px 20px;
@@ -105,10 +129,35 @@
     <div class="wrapper">
         <div class="sidebar">
             <div class="sidebar__links">
-                <div class="sidebar__link">Revenues</div>
-                <div class="sidebar__link">Subscription</div>
-                <div class="sidebar__link">Clients</div>
-                <div class="sidebar__link">Contents</div>
+                <div class="sidebar__link sidebar__link__label">Revenues</div>
+                <div class="sidebar__link sidebar__link--active">
+                    <div class="sidebar__link__label">Subscription</div>
+                    <div class="sidebar__link__submenu">
+                        <a href="subscription.html" class="sidebar__link__submenu__link">Subscriptions</a>
+                        <a href="subscription.html" class="sidebar__link__submenu__link">UTM datas</a>
+                        <a href="subscription.html" class="sidebar__link__submenu__link">Geographical datas</a>
+                    </div>
+                </div>
+                <div class="sidebar__link">
+                    <div class="sidebar__link__label">Clients</div>
+                    <div class="sidebar__link__submenu">
+                        <div class="sidebar__link__submenu__link">Clients</div>
+                        <div class="sidebar__link__submenu__link">UTM datas</div>
+                        <div class="sidebar__link__submenu__link">Geographical datas</div>
+                        <div class="sidebar__link__submenu__link">Usage datas</div>
+                        <div class="sidebar__link__submenu__link">Costs datas</div>
+                    </div>
+                </div>
+                <div class="sidebar__link">
+                    <div class="sidebar__link__label">Contents</div>
+                    <div class="sidebar__link__submenu">
+                        <div class="sidebar__link__submenu__link">Clients</div>
+                        <div class="sidebar__link__submenu__link">UTM datas</div>
+                        <div class="sidebar__link__submenu__link">Geographical datas</div>
+                        <div class="sidebar__link__submenu__link">Usage datas</div>
+                        <div class="sidebar__link__submenu__link">Costs datas</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -358,6 +407,13 @@
         $(".myTable").hide();
         $(".myTable").eq(tabIndex).show();
       });
+
+      $(".sidebar__link").click(function() {
+        let linkIndex = $(this).index()
+
+        $('.sidebar__link').removeClass('sidebar__link--active')
+        $(this).addClass('sidebar__link--active')
+      })
     });
     </script>
 </body>
