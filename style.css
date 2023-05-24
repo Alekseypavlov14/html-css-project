@@ -124,3 +124,41 @@ h1 {
 .tab-pane.active {
   display: block;
 }
+/* .calendar-container {
+  width: 100%;
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.calendar {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.calendar__icon {
+  width: 16px;
+  height: 16px;
+}
+.calendar__menu {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  background-color: #fff;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  display: flex;
+}
+.calendar:not(.calendar--active) .calendar__menu {
+  display: none;
+}
+.calendar__menu__link {
+  padding: 5px;
+  cursor: pointer;
+} */
