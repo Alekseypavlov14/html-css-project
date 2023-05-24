@@ -5,58 +5,122 @@
     <title>Revenues</title>
     
     <style>
-    .myTable {
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    .myTable th, .myTable td {
-      padding: 10px;
-      border: 1px solid #000;
-    }
-
-    .myTable tbody tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-        
-    .tab-container {
-      position: relative;
-    }
-
-    .tabs {
-      list-style: none;
-      margin: 0;
-      padding: 0; 
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
-    .tabs li {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: lightgray;
-      cursor: pointer;
-    }
-
-    .tabs li.active {
-      background-color: white;
-    }
-
-    .tab-content {
-      padding-top: 40px;
-    }
-
-    .tab-pane {
-      display: none;
-    }
-
-    .tab-pane.active {
-      display: block;
-    }
-
-        
-    </style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+  
+      html,
+      body {
+          width: 100%;
+          height: 100%;
+          font-family: sans-serif;
+      }
+  
+      .wrapper {
+          display: flex;
+          height: 100%;
+      }
+  
+      .wrapper .sidebar {
+          flex: 0 0 200px;
+          border-right: 1px solid grey;
+      }
+  
+      .sidebar__links {
+          margin-top: 20px;
+      }
+  
+      .sidebar__link {
+          padding: 10px;
+          display: block;
+          text-decoration: none;
+          color: #000;
+      }
+  
+      .sidebar__link--active {
+          background-color: rgb(225, 225, 225);
+      }
+  
+      .sidebar__link__label {
+          cursor: pointer;
+      }
+  
+      .sidebar__link__submenu {
+          padding: 10px;
+          padding-bottom: 0px;
+      }
+      
+      .sidebar__link:not(.sidebar__link--active) .sidebar__link__submenu {
+          display: none;
+      }
+  
+      .sidebar__link__submenu__link {
+          padding: 10px;
+          display: block;
+          text-decoration: none;
+          color: #000;
+      }
+  
+      .main {
+          flex: 1 1 auto;
+          padding: 0px 20px;
+      }
+  
+      .myTable {
+        border-collapse: collapse;
+        width: 100%;
+      }
+  
+      .myTable th, .myTable td {
+        padding: 10px;
+        border: 1px solid #000;
+      }
+  
+      .myTable tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+          
+      .tab-container {
+          width: 100%;
+      }
+  
+      .tabs {
+        list-style: none;
+        margin: 0;
+        padding: 0; 
+      }
+  
+      .tabs li {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: lightgray;
+        cursor: pointer;
+        margin: -4px;
+        border: 1px solid grey;
+      }
+  
+      .tabs li.active {
+        background-color: rgb(65, 207, 65);
+        color: #fff;
+        border: 1px solid rgb(65, 207, 65);
+      }
+  
+      .tab-content {
+        padding-top: 40px;
+      }
+  
+      .tab-pane {
+        display: none;
+      }
+  
+      .tab-pane.active {
+        display: block;
+      }
+  
+          
+      </style>
     
     <!-- Add jQuery library -->
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -65,101 +129,137 @@
 </head>
 
 <body>
-    
-    <h1>page revenues</h1>
-    
-    
-    <div class="tab-container">
-      <ul class="tabs">
-        <li class="active" >Revenues</li>
-      </ul>
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="sidebar__links">
+          <div class="sidebar__link sidebar__link__label">Revenues</div>
+          <div class="sidebar__link sidebar__link--active">
+              <div class="sidebar__link__label">Subscription</div>
+              <div class="sidebar__link__submenu">
+                  <a href="subscription.html" class="sidebar__link__submenu__link">Subscriptions</a>
+                  <a href="subscription.html" class="sidebar__link__submenu__link">UTM datas</a>
+                  <a href="subscription.html" class="sidebar__link__submenu__link">Geographical datas</a>
+              </div>
+          </div>
+          <div class="sidebar__link">
+              <div class="sidebar__link__label">Clients</div>
+              <div class="sidebar__link__submenu">
+                  <div class="sidebar__link__submenu__link">Clients</div>
+                  <div class="sidebar__link__submenu__link">UTM datas</div>
+                  <div class="sidebar__link__submenu__link">Geographical datas</div>
+                  <div class="sidebar__link__submenu__link">Usage datas</div>
+                  <div class="sidebar__link__submenu__link">Costs datas</div>
+              </div>
+          </div>
+          <div class="sidebar__link">
+              <div class="sidebar__link__label">Contents</div>
+              <div class="sidebar__link__submenu">
+                  <div class="sidebar__link__submenu__link">Clients</div>
+                  <div class="sidebar__link__submenu__link">UTM datas</div>
+                  <div class="sidebar__link__submenu__link">Geographical datas</div>
+                  <div class="sidebar__link__submenu__link">Usage datas</div>
+                  <div class="sidebar__link__submenu__link">Costs datas</div>
+              </div>
+          </div>
+      </div>
     </div>
+  
+    <div class="main">
+      <h1>page revenues</h1>
+      
+      <p>&nbsp;</p>
+      
+      <div class="tab-container">
+        <ul class="tabs">
+          <li class="active" >Revenues</li>
+        </ul>
+      </div>
+  
+      <p>&nbsp;</p>
+      
+      
+      
+      <img src="Screenshot 2023-05-22 at 15.49.57.png" alt="">
+      
+      <p>&nbsp;</p>
+      
+      <img src="Screenshot 2023-05-22 at 15.49.31.png" alt="">
+      
+      <p>&nbsp;</p>
+      
+  <table class="myTable" id="content-1">
+      
+      <thead>
+          <tr>
+              <td>ID payment</td>
+              <td>Name / Firstname</td>
+              <td>ID subscription</td>
+              <td>Date</td>
+              <td>Amount</td>
+              <td>action</td>
+          </tr>
+      </thead>
+      
+      <tbody>
+          <tr>
+              <td><a href="#">12345678990</a></td>
+              <td><a href="#">Nicolas Legrand</a></td>
+              <td><a href="#">12345678990</a></td>
+              <td>22/05/2023 16:52:00</td>
+              <td>49.99€</td>
+              <td><a href="#">view</a> - <a href="#">refund</a></td>
+          </tr>
+          
+          <tr>
+              <td><a href="#">12345678990</a></td>
+              <td><a href="#">Nicolas Legrand</a></td>
+              <td><a href="#">12345678990</a></td>
+              <td>22/05/2023 16:52:00</td>
+              <td>49.99€</td>
+              <td><a href="#">view</a> - <a href="#">refund</a></td>
+          </tr>
+          
+          <tr>
+              <td><a href="#">12345678990</a></td>
+              <td><a href="#">Nicolas Legrand</a></td>
+              <td><a href="#">12345678990</a></td>
+              <td>22/05/2023 16:52:00</td>
+              <td>49.99€</td>
+              <td><a href="#">view</a> - <a href="#">refund</a></td>
+          </tr>
+          
+          <tr>
+              <td><a href="#">12345678990</a></td>
+              <td><a href="#">Nicolas Legrand</a></td>
+              <td><a href="#">12345678990</a></td>
+              <td>22/05/2023 16:52:00</td>
+              <td>49.99€</td>
+              <td><a href="#">view</a> - <a href="#">refund</a></td>
+          </tr>
+          
+          <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td><strong>198.90€</strong></td>
+              <td>-</td>
+          </tr>
+          
+      </tbody>
+      
+  </table>
+      
+          
+      <p>&nbsp;</p>
+      
+      <img src="Screenshot 2023-05-22 at 15.50.08.png" alt="">
+      
+    </div>
+  </div>
 
-    <p>&nbsp;</p>
-    <p>&nbsp;</p> 
-    <p>&nbsp;</p>
     
-    
-    
-    <img src="Screenshot 2023-05-22 at 15.49.57.png" alt="">
-    
-    <p>&nbsp;</p>
-    
-    <img src="Screenshot 2023-05-22 at 15.49.31.png" alt="">
-    
-    <p>&nbsp;</p>
-    
-<table class="myTable" id="content-1">
-    
-    <thead>
-        <tr>
-            <td>ID payment</td>
-            <td>Name / Firstname</td>
-            <td>ID subscription</td>
-            <td>Date</td>
-            <td>Amount</td>
-            <td>action</td>
-        </tr>
-    </thead>
-    
-    <tbody>
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Nicolas Legrand</a></td>
-            <td><a href="#">12345678990</a></td>
-            <td>22/05/2023 16:52:00</td>
-            <td>49.99€</td>
-            <td><a href="#">view</a> - <a href="#">refund</a></td>
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Nicolas Legrand</a></td>
-            <td><a href="#">12345678990</a></td>
-            <td>22/05/2023 16:52:00</td>
-            <td>49.99€</td>
-            <td><a href="#">view</a> - <a href="#">refund</a></td>
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Nicolas Legrand</a></td>
-            <td><a href="#">12345678990</a></td>
-            <td>22/05/2023 16:52:00</td>
-            <td>49.99€</td>
-            <td><a href="#">view</a> - <a href="#">refund</a></td>
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Nicolas Legrand</a></td>
-            <td><a href="#">12345678990</a></td>
-            <td>22/05/2023 16:52:00</td>
-            <td>49.99€</td>
-            <td><a href="#">view</a> - <a href="#">refund</a></td>
-        </tr>
-        
-        <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td><strong>198.90€</strong></td>
-            <td>-</td>
-        </tr>
-        
-    </tbody>
-    
-</table>
-    
-        
-    <p>&nbsp;</p>
-    
-    <img src="Screenshot 2023-05-22 at 15.50.08.png" alt="">
-    
-
-    
-    <script>
+  <script>
     $(document).ready(function() {
       $(".tabs li").click(function() {
         var tabIndex = $(this).index();
