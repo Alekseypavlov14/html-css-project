@@ -132,8 +132,8 @@
   <div class="wrapper">
     <div class="sidebar">
       <div class="sidebar__links">
-          <div class="sidebar__link sidebar__link__label">Revenues</div>
-          <div class="sidebar__link sidebar__link--active">
+          <a href="revenues.html" class="sidebar__link sidebar__link__label sidebar__link--active">Revenues</a>
+          <div class="sidebar__link">
               <div class="sidebar__link__label">Subscription</div>
               <div class="sidebar__link__submenu">
                   <a href="subscription.html" class="sidebar__link__submenu__link">Subscriptions</a>
@@ -144,21 +144,21 @@
           <div class="sidebar__link">
               <div class="sidebar__link__label">Clients</div>
               <div class="sidebar__link__submenu">
-                  <div class="sidebar__link__submenu__link">Clients</div>
-                  <div class="sidebar__link__submenu__link">UTM datas</div>
-                  <div class="sidebar__link__submenu__link">Geographical datas</div>
-                  <div class="sidebar__link__submenu__link">Usage datas</div>
-                  <div class="sidebar__link__submenu__link">Costs datas</div>
+                  <a href="clients.html" class="sidebar__link__submenu__link">Clients</a>
+                  <a href="clients.html" class="sidebar__link__submenu__link">UTM datas</a>
+                  <a href="clients.html" class="sidebar__link__submenu__link">Geographical datas</a>
+                  <a href="clients.html" class="sidebar__link__submenu__link">Usage datas</a>
+                  <a href="clients.html" class="sidebar__link__submenu__link">Costs datas</a>
               </div>
           </div>
           <div class="sidebar__link">
               <div class="sidebar__link__label">Contents</div>
               <div class="sidebar__link__submenu">
-                  <div class="sidebar__link__submenu__link">Clients</div>
-                  <div class="sidebar__link__submenu__link">UTM datas</div>
-                  <div class="sidebar__link__submenu__link">Geographical datas</div>
-                  <div class="sidebar__link__submenu__link">Usage datas</div>
-                  <div class="sidebar__link__submenu__link">Costs datas</div>
+                  <a href="contents.html" class="sidebar__link__submenu__link">Clients</a>
+                  <a href="contents.html" class="sidebar__link__submenu__link">UTM datas</a>
+                  <a href="contents.html" class="sidebar__link__submenu__link">Geographical datas</a>
+                  <a href="contents.html" class="sidebar__link__submenu__link">Usage datas</a>
+                  <a href="contents.html" class="sidebar__link__submenu__link">Costs datas</a>
               </div>
           </div>
       </div>
@@ -270,6 +270,12 @@
         $(".myTable").hide();
         $(".myTable").eq(tabIndex).show();
       });
+      $(".sidebar__link").click(function() {
+        let linkIndex = $(this).index()
+
+        $('.sidebar__link').removeClass('sidebar__link--active')
+        $(this).addClass('sidebar__link--active')
+      })
     });
     </script>
 </body>
