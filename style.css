@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.wrapper .sidebar {
+  flex: 0 0 200px;
+  border-right: 1px solid grey;
+}
+
+.sidebar__links {
+  margin-top: 20px;
+}
+
+.sidebar__link {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.sidebar__link--active {
+  background-color: rgb(225, 225, 225);
+}
+
+.sidebar__link__label {
+  cursor: pointer;
+}
+
+.sidebar__link__submenu {
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.sidebar__link:not(.sidebar__link--active) .sidebar__link__submenu {
+  display: none;
+}
+
+.sidebar__link__submenu__link {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.main {
+  flex: 1 1 auto;
+  padding: 0px 20px;
+}
+
+.myTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.myTable th, .myTable td {
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+.myTable tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+  
+.tab-container {
+  width: 100%;
+}
+
+.tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+}
+
+.tabs li {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: lightgray;
+  cursor: pointer;
+  margin: -4px;
+  border: 1px solid grey;
+}
+
+.tabs li.active {
+  background-color: rgb(65, 207, 65);
+  color: #fff;
+  border: 1px solid rgb(65, 207, 65);
+}
+
+.tab-content {
+  padding-top: 40px;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
