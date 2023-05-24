@@ -162,3 +162,6 @@ h1 {
   padding: 5px;
   cursor: pointer;
 } */
+.table-action-icon {
+  width: 20px;
+}
