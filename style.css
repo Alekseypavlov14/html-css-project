@@ -62,17 +62,30 @@ body {
 }
 
 .myTable {
-  border-collapse: collapse;
   width: 100%;
+  border: 1px solid lightgrey;
+}
+
+thead {
+  font-weight: 700;
+}
+
+h1 {
+  margin-top: 30px;
 }
 
 .myTable th, .myTable td {
   padding: 10px;
-  border: 1px solid #000;
+  border: none;
 }
 
 .myTable tbody tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+.myTable a {
+  text-decoration: none;
+  color: #000;
 }
   
 .tab-container {
