@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>clients</title>
+    
+    <style>
+    .myTable {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .myTable th, .myTable td {
+      padding: 10px;
+      border: 1px solid #000;
+    }
+
+    .myTable tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+        
+    .tab-container {
+      position: relative;
+    }
+
+    .tabs {
+      list-style: none;
+      margin: 0;
+      padding: 0; 
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .tabs li {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: lightgray;
+      cursor: pointer;
+    }
+
+    .tabs li.active {
+      background-color: white;
+    }
+
+    .tab-content {
+      padding-top: 40px;
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+        
+    </style>
+    
+    <!-- Add jQuery library -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
+</head>
+
+<body>
+    
+    <h1>page clients</h1>
+    
+    
+    <div class="tab-container">
+      <ul class="tabs">
+        <li class="active" >Clients</li>
+        <li >UTM datas</li>
+        <li >Geographical datas</li>
+        <li >Usage datas</li>
+        <li >Costs datas</li>
+      </ul>
+    </div>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    
+<table class="myTable" id="content-1">
+    
+    <thead>
+        <tr>
+            <td>Client ID</td>
+            <td>Name / Firstname</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Status</td>
+            <td>action</td>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Nicolas Legrand</a></td>
+            <td>legrandnicolas@gmail.com</td>
+            <td>+33 769546798</td>
+            <td>Active</td>
+            <td><a href="#">edit</a> - <a href="#">cancel</a></td>
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Martin Dupont</a></td>
+            <td>dupontmartin@gmail.com</td>
+            <td>+33 769546798</td>
+            <td>Inactive</td>
+            <td><a href="#">edit</a> - <a href="#">cancel</a></td>
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Yoann Dana</a></td>
+            <td>danayoann@gmail.com</td>
+            <td>+33 769546798</td>
+            <td>Active</td>
+            <td><a href="#">edit</a> - <a href="#">cancel</a></td>
+        </tr>
+        
+    </tbody>
+    
+</table>
+    
+    
+    
+<table class="myTable" id="content-2" style="display: none">
+    
+    <thead>
+        <tr>
+            <td>Client ID</td>
+            <td>Name / Firstname</td>
+            <td>Email</td>
+            <td>source</td>
+            <td>landing</td>
+            <td>browser</td>
+            <td>Editor</td>
+            <td>Campaign</td>
+            <td>IP</td>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Nicolas Legrand</a></td>
+            <td>legrandnicolas@gmail.com</td>
+            
+            <td>TABOOLA</td>
+            <td>fr/landing-1</td>
+            <td>Chrome</td>
+            <td>MSN</td>
+            <td>5620870</td>
+            <td>173.178.110.121</td>
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Martin Dupont</a></td>
+            <td>dupontmartin@gmail.com</td>
+            
+            <td>TABOOLA</td>
+            <td>fr/landing-1</td>
+            <td>Chrome</td>
+            <td>MSN</td>
+            <td>5620870</td>
+            <td>173.178.110.121</td>
+            
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+             <td><a href="#">Yoann Dana</a></td>
+            <td>danayoann@gmail.com</td>
+            
+            <td>TABOOLA</td>
+            <td>fr/landing-1</td>
+            <td>Chrome</td>
+            <td>MSN</td>
+            <td>5620870</td>
+            <td>173.178.110.121</td>
+            
+        </tr>
+    </tbody>
+    
+</table>
+    
+    
+<table class="myTable" style="display: none">
+    
+    <thead>
+        <tr>
+            <td>Client ID</td>
+            <td>Name / Firstname</td>
+            <td>Email</td>
+            <td>Country</td>
+            <td>Language</td>
+            <td>City</td>
+            <td>Zip code</td>
+            <td>IP</td>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Nicolas Legrand</a></td>
+            <td>legrandnicolas@gmail.com</td>
+            
+            <td>France</td>
+            <td>French</td>
+            <td>Montpellier</td>
+            <td>34100</td>
+            <td>173.178.110.121</td>
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Martin Dupont</a></td>
+            <td>dupontmartin@gmail.com</td>
+            
+            <td>France</td>
+            <td>English</td>
+            <td>Paris</td>
+            <td>75100</td>
+            <td>173.178.110.121</td>
+            
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+             <td><a href="#">Yoann Dana</a></td>
+            <td>danayoann@gmail.com</td>
+            
+            <td>Israel</td>
+            <td>Italian</td>
+            <td>Tel-aviv</td>
+            <td>69000</td>
+            <td>173.178.110.121</td>
+            
+        </tr>
+    </tbody>
+    
+</table>
+    
+    
+    
+    <table class="myTable" id="content-2" style="display: none">
+    
+    <thead>
+        <tr>
+            <td>Client ID</td>
+            <td>Name / Firstname</td>
+            <td>Email</td>
+            <td>Credit used this month</td>
+            <td>Credit used previous month</td>
+            <td>Credit used total</td>
+            
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Nicolas Legrand</a></td>
+            <td>legrandnicolas@gmail.com</td>
+            
+            <td>1000</td>
+            <td>1200</td>
+            <td>7500</td>
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Martin Dupont</a></td>
+            <td>dupontmartin@gmail.com</td>
+            
+            <td>2000</td>
+            <td>2500</td>
+            <td>12800</td>
+            
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+             <td><a href="#">Yoann Dana</a></td>
+            <td>danayoann@gmail.com</td>
+            
+            <td>900</td>
+            <td>1200</td>
+            <td>15000</td>
+            
+        </tr>
+    </tbody>
+    
+</table>
+    
+    
+    <script>
+    $(document).ready(function() {
+      $(".tabs li").click(function() {
+        var tabIndex = $(this).index();
+
+        $(".tabs li").removeClass("active");
+        $(this).addClass("active");
+
+        $(".myTable").hide();
+        $(".myTable").eq(tabIndex).show();
+      });
+    });
+    </script>
+</body>
+</html>

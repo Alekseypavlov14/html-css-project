@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Revenues</title>
+    
+    <style>
+    .myTable {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .myTable th, .myTable td {
+      padding: 10px;
+      border: 1px solid #000;
+    }
+
+    .myTable tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+        
+    .tab-container {
+      position: relative;
+    }
+
+    .tabs {
+      list-style: none;
+      margin: 0;
+      padding: 0; 
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .tabs li {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: lightgray;
+      cursor: pointer;
+    }
+
+    .tabs li.active {
+      background-color: white;
+    }
+
+    .tab-content {
+      padding-top: 40px;
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+        
+    </style>
+    
+    <!-- Add jQuery library -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
+</head>
+
+<body>
+    
+    <h1>page revenues</h1>
+    
+    
+    <div class="tab-container">
+      <ul class="tabs">
+        <li class="active" >Revenues</li>
+      </ul>
+    </div>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p> 
+    <p>&nbsp;</p>
+    
+    
+    
+    <img src="Screenshot 2023-05-22 at 15.49.57.png" alt="">
+    
+    <p>&nbsp;</p>
+    
+    <img src="Screenshot 2023-05-22 at 15.49.31.png" alt="">
+    
+    <p>&nbsp;</p>
+    
+<table class="myTable" id="content-1">
+    
+    <thead>
+        <tr>
+            <td>ID payment</td>
+            <td>Name / Firstname</td>
+            <td>ID subscription</td>
+            <td>Date</td>
+            <td>Amount</td>
+            <td>action</td>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Nicolas Legrand</a></td>
+            <td><a href="#">12345678990</a></td>
+            <td>22/05/2023 16:52:00</td>
+            <td>49.99€</td>
+            <td><a href="#">view</a> - <a href="#">refund</a></td>
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Nicolas Legrand</a></td>
+            <td><a href="#">12345678990</a></td>
+            <td>22/05/2023 16:52:00</td>
+            <td>49.99€</td>
+            <td><a href="#">view</a> - <a href="#">refund</a></td>
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Nicolas Legrand</a></td>
+            <td><a href="#">12345678990</a></td>
+            <td>22/05/2023 16:52:00</td>
+            <td>49.99€</td>
+            <td><a href="#">view</a> - <a href="#">refund</a></td>
+        </tr>
+        
+        <tr>
+            <td><a href="#">12345678990</a></td>
+            <td><a href="#">Nicolas Legrand</a></td>
+            <td><a href="#">12345678990</a></td>
+            <td>22/05/2023 16:52:00</td>
+            <td>49.99€</td>
+            <td><a href="#">view</a> - <a href="#">refund</a></td>
+        </tr>
+        
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><strong>198.90€</strong></td>
+            <td>-</td>
+        </tr>
+        
+    </tbody>
+    
+</table>
+    
+        
+    <p>&nbsp;</p>
+    
+    <img src="Screenshot 2023-05-22 at 15.50.08.png" alt="">
+    
+
+    
+    <script>
+    $(document).ready(function() {
+      $(".tabs li").click(function() {
+        var tabIndex = $(this).index();
+
+        $(".tabs li").removeClass("active");
+        $(this).addClass("active");
+
+        $(".myTable").hide();
+        $(".myTable").eq(tabIndex).show();
+      });
+    });
+    </script>
+</body>
+</html>
