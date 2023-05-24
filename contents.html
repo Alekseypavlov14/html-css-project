@@ -5,58 +5,122 @@
     <title>clients</title>
     
     <style>
-    .myTable {
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    .myTable th, .myTable td {
-      padding: 10px;
-      border: 1px solid #000;
-    }
-
-    .myTable tbody tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: sans-serif;
+        }
+    
+        .wrapper {
+            display: flex;
+            height: 100%;
+        }
+    
+        .wrapper .sidebar {
+            flex: 0 0 200px;
+            border-right: 1px solid grey;
+        }
+    
+        .sidebar__links {
+            margin-top: 20px;
+        }
+    
+        .sidebar__link {
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            color: #000;
+        }
+    
+        .sidebar__link--active {
+            background-color: rgb(225, 225, 225);
+        }
+    
+        .sidebar__link__label {
+            cursor: pointer;
+        }
+    
+        .sidebar__link__submenu {
+            padding: 10px;
+            padding-bottom: 0px;
+        }
         
-    .tab-container {
-      position: relative;
-    }
-
-    .tabs {
-      list-style: none;
-      margin: 0;
-      padding: 0; 
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
-    .tabs li {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: lightgray;
-      cursor: pointer;
-    }
-
-    .tabs li.active {
-      background-color: white;
-    }
-
-    .tab-content {
-      padding-top: 40px;
-    }
-
-    .tab-pane {
-      display: none;
-    }
-
-    .tab-pane.active {
-      display: block;
-    }
-
-        
-    </style>
+        .sidebar__link:not(.sidebar__link--active) .sidebar__link__submenu {
+            display: none;
+        }
+    
+        .sidebar__link__submenu__link {
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            color: #000;
+        }
+    
+        .main {
+            flex: 1 1 auto;
+            padding: 0px 20px;
+        }
+    
+        .myTable {
+          border-collapse: collapse;
+          width: 100%;
+        }
+    
+        .myTable th, .myTable td {
+          padding: 10px;
+          border: 1px solid #000;
+        }
+    
+        .myTable tbody tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+            
+        .tab-container {
+            width: 100%;
+        }
+    
+        .tabs {
+          list-style: none;
+          margin: 0;
+          padding: 0; 
+        }
+    
+        .tabs li {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: lightgray;
+          cursor: pointer;
+          margin: -4px;
+          border: 1px solid grey;
+        }
+    
+        .tabs li.active {
+          background-color: rgb(65, 207, 65);
+          color: #fff;
+          border: 1px solid rgb(65, 207, 65);
+        }
+    
+        .tab-content {
+          padding-top: 40px;
+        }
+    
+        .tab-pane {
+          display: none;
+        }
+    
+        .tab-pane.active {
+          display: block;
+        }
+    
+            
+        </style>
     
     <!-- Add jQuery library -->
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -66,240 +130,276 @@
 
 <body>
     
-    <h1>page clients</h1>
-    
-    
-    <div class="tab-container">
-      <ul class="tabs">
-        <li class="active" >Clients</li>
-        <li >UTM datas</li>
-        <li >Geographical datas</li>
-        <li >Usage datas</li>
-        <li >Costs datas</li>
-      </ul>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar__links">
+                <a href="revenues.html" class="sidebar__link sidebar__link__label">Revenues</a>
+                <div class="sidebar__link">
+                    <div class="sidebar__link__label">Subscription</div>
+                    <div class="sidebar__link__submenu">
+                        <a href="subscription.html" class="sidebar__link__submenu__link">Subscriptions</a>
+                        <a href="subscription.html" class="sidebar__link__submenu__link">UTM datas</a>
+                        <a href="subscription.html" class="sidebar__link__submenu__link">Geographical datas</a>
+                    </div>
+                </div>
+                <div class="sidebar__link">
+                    <div class="sidebar__link__label">Clients</div>
+                    <div class="sidebar__link__submenu">
+                        <a href="clients.html" class="sidebar__link__submenu__link">Clients</a>
+                        <a href="clients.html" class="sidebar__link__submenu__link">UTM datas</a>
+                        <a href="clients.html" class="sidebar__link__submenu__link">Geographical datas</a>
+                        <a href="clients.html" class="sidebar__link__submenu__link">Usage datas</a>
+                        <a href="clients.html" class="sidebar__link__submenu__link">Costs datas</a>
+                    </div>
+                </div>
+                <div class="sidebar__link sidebar__link--active">
+                    <div class="sidebar__link__label">Contents</div>
+                    <div class="sidebar__link__submenu">
+                        <a href="contents.html" class="sidebar__link__submenu__link">Clients</a>
+                        <a href="contents.html" class="sidebar__link__submenu__link">UTM datas</a>
+                        <a href="contents.html" class="sidebar__link__submenu__link">Geographical datas</a>
+                        <a href="contents.html" class="sidebar__link__submenu__link">Usage datas</a>
+                        <a href="contents.html" class="sidebar__link__submenu__link">Costs datas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h1>page clients</h1>
+            
+            <p>&nbsp;</p>
+            
+            <div class="tab-container">
+              <ul class="tabs">
+                <li class="active" >Clients</li>
+                <li >UTM datas</li>
+                <li >Geographical datas</li>
+                <li >Usage datas</li>
+                <li >Costs datas</li>
+              </ul>
+            </div>
+        
+            <p>&nbsp;</p>
+            
+        <table class="myTable" id="content-1">
+            
+            <thead>
+                <tr>
+                    <td>Client ID</td>
+                    <td>Name / Firstname</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                    <td>Status</td>
+                    <td>action</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                    <td><a href="#">Nicolas Legrand</a></td>
+                    <td>legrandnicolas@gmail.com</td>
+                    <td>+33 769546798</td>
+                    <td>Active</td>
+                    <td><a href="#">edit</a> - <a href="#">cancel</a></td>
+                </tr>
+                
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                    <td><a href="#">Martin Dupont</a></td>
+                    <td>dupontmartin@gmail.com</td>
+                    <td>+33 769546798</td>
+                    <td>Inactive</td>
+                    <td><a href="#">edit</a> - <a href="#">cancel</a></td>
+                </tr>
+                
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                    <td><a href="#">Yoann Dana</a></td>
+                    <td>danayoann@gmail.com</td>
+                    <td>+33 769546798</td>
+                    <td>Active</td>
+                    <td><a href="#">edit</a> - <a href="#">cancel</a></td>
+                </tr>
+                
+            </tbody>
+            
+        </table>
+            
+            
+            
+        <table class="myTable" id="content-2" style="display: none">
+            
+            <thead>
+                <tr>
+                    <td>Client ID</td>
+                    <td>Name / Firstname</td>
+                    <td>Email</td>
+                    <td>source</td>
+                    <td>landing</td>
+                    <td>browser</td>
+                    <td>Editor</td>
+                    <td>Campaign</td>
+                    <td>IP</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                    <td><a href="#">Nicolas Legrand</a></td>
+                    <td>legrandnicolas@gmail.com</td>
+                    
+                    <td>TABOOLA</td>
+                    <td>fr/landing-1</td>
+                    <td>Chrome</td>
+                    <td>MSN</td>
+                    <td>5620870</td>
+                    <td>173.178.110.121</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                    <td><a href="#">Martin Dupont</a></td>
+                    <td>dupontmartin@gmail.com</td>
+                    
+                    <td>TABOOLA</td>
+                    <td>fr/landing-1</td>
+                    <td>Chrome</td>
+                    <td>MSN</td>
+                    <td>5620870</td>
+                    <td>173.178.110.121</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                     <td><a href="#">Yoann Dana</a></td>
+                    <td>danayoann@gmail.com</td>
+                    
+                    <td>TABOOLA</td>
+                    <td>fr/landing-1</td>
+                    <td>Chrome</td>
+                    <td>MSN</td>
+                    <td>5620870</td>
+                    <td>173.178.110.121</td>
+                    
+                </tr>
+            </tbody>
+            
+        </table>
+            
+            
+        <table class="myTable" style="display: none">
+            
+            <thead>
+                <tr>
+                    <td>Client ID</td>
+                    <td>Name / Firstname</td>
+                    <td>Email</td>
+                    <td>Country</td>
+                    <td>Language</td>
+                    <td>City</td>
+                    <td>Zip code</td>
+                    <td>IP</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                    <td><a href="#">Nicolas Legrand</a></td>
+                    <td>legrandnicolas@gmail.com</td>
+                    
+                    <td>France</td>
+                    <td>French</td>
+                    <td>Montpellier</td>
+                    <td>34100</td>
+                    <td>173.178.110.121</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                    <td><a href="#">Martin Dupont</a></td>
+                    <td>dupontmartin@gmail.com</td>
+                    
+                    <td>France</td>
+                    <td>English</td>
+                    <td>Paris</td>
+                    <td>75100</td>
+                    <td>173.178.110.121</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                     <td><a href="#">Yoann Dana</a></td>
+                    <td>danayoann@gmail.com</td>
+                    
+                    <td>Israel</td>
+                    <td>Italian</td>
+                    <td>Tel-aviv</td>
+                    <td>69000</td>
+                    <td>173.178.110.121</td>
+                    
+                </tr>
+            </tbody>
+            
+        </table>
+            
+            
+            
+            <table class="myTable" id="content-2" style="display: none">
+            
+            <thead>
+                <tr>
+                    <td>Client ID</td>
+                    <td>Name / Firstname</td>
+                    <td>Email</td>
+                    <td>Credit used this month</td>
+                    <td>Credit used previous month</td>
+                    <td>Credit used total</td>
+                    
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                    <td><a href="#">Nicolas Legrand</a></td>
+                    <td>legrandnicolas@gmail.com</td>
+                    
+                    <td>1000</td>
+                    <td>1200</td>
+                    <td>7500</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                    <td><a href="#">Martin Dupont</a></td>
+                    <td>dupontmartin@gmail.com</td>
+                    
+                    <td>2000</td>
+                    <td>2500</td>
+                    <td>12800</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td><a href="#">12345678990</a></td>
+                     <td><a href="#">Yoann Dana</a></td>
+                    <td>danayoann@gmail.com</td>
+                    
+                    <td>900</td>
+                    <td>1200</td>
+                    <td>15000</td>
+                    
+                </tr>
+            </tbody>
+            
+        </table>
+        </div>
     </div>
-
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    
-<table class="myTable" id="content-1">
-    
-    <thead>
-        <tr>
-            <td>Client ID</td>
-            <td>Name / Firstname</td>
-            <td>Email</td>
-            <td>Phone</td>
-            <td>Status</td>
-            <td>action</td>
-        </tr>
-    </thead>
-    
-    <tbody>
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Nicolas Legrand</a></td>
-            <td>legrandnicolas@gmail.com</td>
-            <td>+33 769546798</td>
-            <td>Active</td>
-            <td><a href="#">edit</a> - <a href="#">cancel</a></td>
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Martin Dupont</a></td>
-            <td>dupontmartin@gmail.com</td>
-            <td>+33 769546798</td>
-            <td>Inactive</td>
-            <td><a href="#">edit</a> - <a href="#">cancel</a></td>
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Yoann Dana</a></td>
-            <td>danayoann@gmail.com</td>
-            <td>+33 769546798</td>
-            <td>Active</td>
-            <td><a href="#">edit</a> - <a href="#">cancel</a></td>
-        </tr>
-        
-    </tbody>
-    
-</table>
-    
-    
-    
-<table class="myTable" id="content-2" style="display: none">
-    
-    <thead>
-        <tr>
-            <td>Client ID</td>
-            <td>Name / Firstname</td>
-            <td>Email</td>
-            <td>source</td>
-            <td>landing</td>
-            <td>browser</td>
-            <td>Editor</td>
-            <td>Campaign</td>
-            <td>IP</td>
-        </tr>
-    </thead>
-    
-    <tbody>
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Nicolas Legrand</a></td>
-            <td>legrandnicolas@gmail.com</td>
-            
-            <td>TABOOLA</td>
-            <td>fr/landing-1</td>
-            <td>Chrome</td>
-            <td>MSN</td>
-            <td>5620870</td>
-            <td>173.178.110.121</td>
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Martin Dupont</a></td>
-            <td>dupontmartin@gmail.com</td>
-            
-            <td>TABOOLA</td>
-            <td>fr/landing-1</td>
-            <td>Chrome</td>
-            <td>MSN</td>
-            <td>5620870</td>
-            <td>173.178.110.121</td>
-            
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-             <td><a href="#">Yoann Dana</a></td>
-            <td>danayoann@gmail.com</td>
-            
-            <td>TABOOLA</td>
-            <td>fr/landing-1</td>
-            <td>Chrome</td>
-            <td>MSN</td>
-            <td>5620870</td>
-            <td>173.178.110.121</td>
-            
-        </tr>
-    </tbody>
-    
-</table>
-    
-    
-<table class="myTable" style="display: none">
-    
-    <thead>
-        <tr>
-            <td>Client ID</td>
-            <td>Name / Firstname</td>
-            <td>Email</td>
-            <td>Country</td>
-            <td>Language</td>
-            <td>City</td>
-            <td>Zip code</td>
-            <td>IP</td>
-        </tr>
-    </thead>
-    
-    <tbody>
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Nicolas Legrand</a></td>
-            <td>legrandnicolas@gmail.com</td>
-            
-            <td>France</td>
-            <td>French</td>
-            <td>Montpellier</td>
-            <td>34100</td>
-            <td>173.178.110.121</td>
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Martin Dupont</a></td>
-            <td>dupontmartin@gmail.com</td>
-            
-            <td>France</td>
-            <td>English</td>
-            <td>Paris</td>
-            <td>75100</td>
-            <td>173.178.110.121</td>
-            
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-             <td><a href="#">Yoann Dana</a></td>
-            <td>danayoann@gmail.com</td>
-            
-            <td>Israel</td>
-            <td>Italian</td>
-            <td>Tel-aviv</td>
-            <td>69000</td>
-            <td>173.178.110.121</td>
-            
-        </tr>
-    </tbody>
-    
-</table>
-    
-    
-    
-    <table class="myTable" id="content-2" style="display: none">
-    
-    <thead>
-        <tr>
-            <td>Client ID</td>
-            <td>Name / Firstname</td>
-            <td>Email</td>
-            <td>Credit used this month</td>
-            <td>Credit used previous month</td>
-            <td>Credit used total</td>
-            
-        </tr>
-    </thead>
-    
-    <tbody>
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Nicolas Legrand</a></td>
-            <td>legrandnicolas@gmail.com</td>
-            
-            <td>1000</td>
-            <td>1200</td>
-            <td>7500</td>
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-            <td><a href="#">Martin Dupont</a></td>
-            <td>dupontmartin@gmail.com</td>
-            
-            <td>2000</td>
-            <td>2500</td>
-            <td>12800</td>
-            
-        </tr>
-        
-        <tr>
-            <td><a href="#">12345678990</a></td>
-             <td><a href="#">Yoann Dana</a></td>
-            <td>danayoann@gmail.com</td>
-            
-            <td>900</td>
-            <td>1200</td>
-            <td>15000</td>
-            
-        </tr>
-    </tbody>
-    
-</table>
     
     
     <script>
