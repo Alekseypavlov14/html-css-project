@@ -168,3 +168,29 @@ h1 {
 .table-action-icon {
   width: 20px;
 }
+
+.icon {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 5px;
+  cursor: pointer;
+}
+.icon-edit {
+  background-color: rgb(255, 255, 91);
+}
+.icon-cancel {
+  background-color: red;
+  color: #fff;
+}
+.icon-view {
+  padding-top: 6px;
+  background-color: rgb(6, 212, 6);
+  color: #fff;
+}
+.icon-refund {
+  background-color: rgb(123, 123, 228);
+  color: #fff;
+}
