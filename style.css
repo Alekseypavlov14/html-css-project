@@ -124,7 +124,7 @@ h1 {
 .tab-pane.active {
   display: block;
 }
-/* .calendar-container {
+.calendar-container {
   width: 100%;
   padding: 20px 0px;
   display: flex;
@@ -149,7 +149,7 @@ h1 {
 .calendar__menu {
   position: absolute;
   top: calc(100% + 1px);
-  left: 0;
+  right: 0;
   background-color: #fff;
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -161,7 +161,10 @@ h1 {
 .calendar__menu__link {
   padding: 5px;
   cursor: pointer;
-} */
+}
+.calendar__menu__link--active {
+  background-color: lightblue;
+}
 .table-action-icon {
   width: 20px;
 }
