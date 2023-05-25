@@ -103,14 +103,13 @@ h1 {
   padding: 10px 20px;
   background-color: lightgray;
   cursor: pointer;
-  margin: -4px;
   border: 1px solid grey;
 }
 
 .tabs li.active {
   background-color: rgb(65, 207, 65);
   color: #fff;
-  border: 1px solid rgb(65, 207, 65);
+  border: 1px solid rgb(6, 81, 6);
 }
 
 .tab-content {
