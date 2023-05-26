@@ -5,6 +5,9 @@ $(document).ready(function() {
     tabIndex = Number(window.location.href.split('#').reverse()[0]) - 1
   } catch(e) {} 
 
+  const url = window.location.href.split('/').reverse()[0]
+  $(`.sidebar__link__submenu__link[href="${url}"]`).addClass('sidebar__link__submenu__link--active')
+
   $(".tabs li").removeClass("active");
   $('.tabs li').eq(tabIndex).addClass("active");
 
