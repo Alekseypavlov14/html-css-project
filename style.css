@@ -56,33 +56,41 @@ body {
   color: #000;
 }
 
-.sidebar__link--active {
-  background-color: rgb(167, 185, 255);
-}
-
 .sidebar__link__label {
   color: #fff;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
-.sidebar__link--active .sidebar__link__label,
-.sidebar__link--active.sidebar__link__label {
-  color: #000;
+.sidebar__link__label span {
+  display: block;
+  transform: rotateZ(-90deg);
+  transition: 0.3s;
+  user-select: none;
+}
+.sidebar__link--active .sidebar__link__label span {
+  transform: rotateZ(0deg);
 }
 
 .sidebar__link__submenu {
   padding: 10px;
   padding-bottom: 0px;
+  transition: 0.3s;
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .sidebar__link:not(.sidebar__link--active) .sidebar__link__submenu {
-  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  height: 0px;
 }
 
 .sidebar__link__submenu__link {
   padding: 10px;
   display: block;
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 .main {

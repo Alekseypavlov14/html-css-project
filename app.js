@@ -8,11 +8,12 @@ $(document).ready(function() {
     $(".myTable").hide();
     $(".myTable").eq(tabIndex).show();
   });
+
   $(".sidebar__link").click(function() {
     let linkIndex = $(this).index()
 
-    $('.sidebar__link').removeClass('sidebar__link--active')
-    $(this).addClass('sidebar__link--active')
+    $('.sidebar__link').not(this).removeClass('sidebar__link--active')
+    $(this).toggleClass('sidebar__link--active')
   })
 
 
