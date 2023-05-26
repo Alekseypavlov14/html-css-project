@@ -170,45 +170,8 @@ h1 {
   justify-content: flex-end;
 }
 .calendar {
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #fff;
-  border: 1px solid lightgray;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
-}
-.calendar__icon {
-  width: 16px;
-  height: 16px;
-}
-.calendar__menu {
-  position: absolute;
-  top: calc(100% + 1px);
-  right: 0;
-  background-color: #fff;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  display: flex;
-}
-.calendar__inputs {
-  flex: 1 1 auto;
-}
-.calendar__menu__date-input {
-  width: 100%;
-  height: 50%;
-}
-.calendar:not(.calendar--active) .calendar__menu {
-  display: none;
-}
-.calendar__menu__link {
   padding: 5px;
-  cursor: pointer;
-}
-.calendar__menu__link--active {
-  background-color: lightblue;
+  border-radius: 5px;
 }
 .table-action-icon {
   width: 20px;

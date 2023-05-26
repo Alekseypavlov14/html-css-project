@@ -204,4 +204,7 @@ $(document).ready(function() {
     $('#calendar-start-date-input').val(startDateValue)
     $('#calendar-finish-date-input').val(finishDateValue)
   }
+
+
+  $('input[name="dates"]').daterangepicker();
 });

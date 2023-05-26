@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
         <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /></head>
 
@@ -73,28 +76,7 @@
       <h1>Revenues</h1>
       
       <div class="calendar-container">
-        <div class="calendar">
-          <img class="calendar__icon" src="assets/calendar-icon.png" alt="" id="calendar-icon">
-          <div class="calendar__date" id="start-date"></div>
-          <div class="calendar__separator">-</div>
-          <div class="calendar__date" id="finish-date"></div>
-
-          <div class="calendar__menu">
-            <div class="calendar__menu__links">
-              <div class="calendar__menu__link" id="calendar-range-today">Today</div>
-              <div class="calendar__menu__link" id="calendar-range-yesterday">Yesterday</div>
-              <div class="calendar__menu__link" id="calendar-range-last-week">Last week</div>
-              <div class="calendar__menu__link" id="calendar-range-last-30-days">Last 30 days</div>
-              <div class="calendar__menu__link" id="calendar-range-this-month">This month</div>
-              <div class="calendar__menu__link" id="calendar-range-last-month">Last month</div>
-              <div class="calendar__menu__link" id="calendar-range-custom">Custom range</div>
-            </div>
-            <div class="calendar__inputs">
-              <input type="date" class="calendar__menu__date-input" id="calendar-start-date-input">
-              <input type="date" class="calendar__menu__date-input" id="calendar-finish-date-input">
-            </div>
-          </div>
-        </div>
+        <input name="dates" class="calendar">
       </div>  
       <p>&nbsp;</p>
       
