@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  const tabIndex = window.location.href.split('#').reverse()[0] - 1
+  $(".tabs li").removeClass("active");
+  $('.tabs li').eq(tabIndex).addClass("active");
+  $(".myTable").eq(tabIndex).show();
+
   $(".tabs li").click(function() {
     var tabIndex = $(this).index();
 
