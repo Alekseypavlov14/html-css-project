@@ -83,7 +83,7 @@ body {
 
 .sidebar__link:not(.sidebar__link--active) .sidebar__link__submenu {
   opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(-10px);
   height: 0px;
   color: lightgray;
 }
@@ -92,6 +92,9 @@ body {
   padding: 10px;
   display: block;
   text-decoration: none;
+  color: lightgrey;
+}
+.sidebar__link__submenu__link--active { 
   color: #fff;
 }
 
