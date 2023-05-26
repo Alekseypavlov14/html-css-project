@@ -38,11 +38,9 @@ $(document).ready(function() {
     $(".myTable").eq(tabIndex).show();
   });
 
-  $(".sidebar__link").click(function() {
-    let linkIndex = $(this).index()
-
-    $('.sidebar__link').not(this).removeClass('sidebar__link--active')
-    $(this).toggleClass('sidebar__link--active')
+  $(".sidebar__link__label").click(function() {
+    $('.sidebar__link').not($(this).closest('.sidebar__link')).removeClass('sidebar__link--active')
+    $(this).closest('.sidebar__link').toggleClass('sidebar__link--active')
   })
   
   $('.sidebar__link__submenu__link').click(function() {
