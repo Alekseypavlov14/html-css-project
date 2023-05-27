@@ -51,4 +51,8 @@ $(document).ready(function() {
   try {
     $('input[name="dates"]').daterangepicker();
   } catch(e) {}
+
+  $('#header-menu-icon').click(() => {
+    $('.sidebar').toggleClass('sidebar--hidden')
+  })
 });
