@@ -1,42 +1,58 @@
-$(document).ready(function() {
-  let tabIndex = 0
+function activeTableStore() {
+  let store = {}
+  let subscribers = []
 
-  try {
-    tabIndex = Number(window.location.href.split('#').reverse()[0]) - 1
-  } catch(e) {} 
-
-  const url = window.location.href.split('/').reverse()[0]
-  $(`.sidebar__link__submenu__link[href="${url}"]`).addClass('sidebar__link__submenu__link--active')
-
-  $(".tabs li").removeClass("active");
-  $('.tabs li').eq(tabIndex).addClass("active");
-
-  $(".myTable").hide();
-  $(".myTable").eq(tabIndex).show();
-
-  window.onhashchange = (e) => {
-    let tabIndex = 0
-
-    try {
-      tabIndex = Number(window.location.href.split('#').reverse()[0]) - 1
-    } catch(e) {} 
-
-    $(".tabs li").removeClass("active");
-    $('.tabs li').eq(tabIndex).addClass("active");
-
-    $(".myTable").hide();
-    $(".myTable").eq(tabIndex).show();
+  function init(initialStore) {
+    store = initialStore
+    subscribers.forEach(handler => handler(store))
+  }
+  function updateStore(newStore) {
+    store = Object.assign({}, store, newStore)
+    subscribers.forEach(handler => handler(store))
+  }
+  function subscribe(handler) {
+    subscribers.push(handler)
   }
 
-  $(".tabs li").click(function() {
-    var tabIndex = $(this).index();
+  return { init, updateStore, subscribe }
+}
 
-    $(".tabs li").removeClass("active");
-    $(this).addClass("active");
+function generateStore(index) {
+  const pages = [
+    'revenues',
+    'subscription',
+    'clients',
+    'contents'
+  ]
+  const page = window.location.href.split('/').reverse()[0]
+  const pageName = page.split('.html')[0]
+  const pageIndex = pages.indexOf(pageName.toLowerCase())
 
+  return {
+    pageIndex: pageIndex,
+    tableIndex: index,
+  }
+}
+
+$(document).ready(function() {
+  const store = activeTableStore()
+  
+  store.subscribe((store) => {
+    // sidebar
+    $('.sidebar__link__submenu__link').removeClass('sidebar__link__submenu__link--active')
+    $(`.sidebar__link:nth-child(${store.pageIndex + 1}) .sidebar__link__submenu__link:nth-child(${store.tableIndex + 1})`).addClass('sidebar__link__submenu__link--active')
+
+    // tabs
+    $(`.tabs li`).removeClass('active')
+    $('.tabs li').eq(store.tableIndex).addClass('active')
+
+    // table
     $(".myTable").hide();
-    $(".myTable").eq(tabIndex).show();
-  });
+    $(".myTable").eq(store.tableIndex).show();
+  })
+  
+  const initialStore = generateStore(Number(window.location.hash.slice(1)) - 1)
+  store.init(initialStore)
 
   $(".sidebar__link__label").click(function() {
     $('.sidebar__link').not($(this).closest('.sidebar__link')).removeClass('sidebar__link--active')
@@ -44,8 +60,10 @@ $(document).ready(function() {
   })
   
   $('.sidebar__link__submenu__link').click(function() {
-    $('.sidebar__link__submenu__link').removeClass('sidebar__link__submenu__link--active')
-    $(this).addClass('sidebar__link__submenu__link--active')
+    store.updateStore(generateStore($(this).index()))
+  })
+  $('.tabs li').click(function() {
+    store.updateStore(generateStore($(this).index()))
   })
 
   try {

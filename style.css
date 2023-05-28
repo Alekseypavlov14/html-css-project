@@ -91,17 +91,20 @@ body {
 }
 
 .sidebar__link {
-  padding: 10px;
+  padding: 10px 0px;
   display: block;
   text-decoration: none;
   color: #000;
 }
-
+.sidebar__link:nth-child(1) {
+  padding: 10px 0px 20px 20px;
+}
 .sidebar__link__label {
   color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
+  padding-left: 20px;
 }
 .sidebar__link__label span {
   display: block;
@@ -114,29 +117,32 @@ body {
 }
 
 .sidebar__link__submenu {
-  padding: 10px;
+  padding: 10px 0px;
   padding-bottom: 0px;
   transition: 0.3s;
   opacity: 1;
+  visibility: visible;
   transform: translateY(0px);
   color: #fff;
 }
 
 .sidebar__link:not(.sidebar__link--active) .sidebar__link__submenu {
   opacity: 0;
-  transform: translateY(-10px);
-  height: 0px;
-  color: lightgray;
+  transform: translateY(-20px);
+  visibility: hidden;
+  color: grey;
+  height: 0;
 }
 
 .sidebar__link__submenu__link {
-  padding: 10px;
+  padding: 10px 0px 10px 40px;
   display: block;
   text-decoration: none;
   color: lightgrey;
 }
 .sidebar__link__submenu__link--active { 
   color: #fff;
+  background-color: rgb(123, 160, 228);
 }
 
 .main__content {
